@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Template</title>
+   <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+   <!-- WRAPPER start -->
+   <div class="wrapper page-loading">
+
+      <!-- HEADER start  -->
+
+      <header class="header">
+         <div class="container">
+            <div class="header__content">
+               <a href="#" class="logo">
+                  <img src="images/logo.png" alt="">
+               </a>
+               <a href="#" class="header__gift-card">
+                  <img src="images/mini-card.png" alt="">
+               </a>
+            </div>
+         </div>
+      </header>
+
+      <!-- HEADER end  -->
+
+      <!-- MAIN start  -->
+      <main class="main loading">
+
+         <div class="container">
+
+            <!-- CONTENT start  -->
+            <div class="loading__content">
+               <p class="loading__title">SCANNING YOUR PURCHASE HISTORY</p>
+               <div class="loading-img">
+                  <div class="loading-img__gray">
+                     <img src="images/arrow.svg" alt="arrow">
+                  </div>
+                  <div class="loading-img__white-box">
+                     <div class="loading-img__white">
+                        <img src="images/arrow-white.svg" alt="arrow-white">
+                     </div>
+                  </div>
+               </div>
+               <p class="loading__hint">One second please</p>
+            </div>
+            <!-- CONTENT end -->
+         </div>
+
+      </main>
+      <!-- MAIN end -->
+
+   </div>
+   <!-- WRAPPER end -->
+
+
+
+   <!-- SCRIPTS start  -->
+   <script src="js/main.min.js"></script>
+   <script>
+      setTimeout(function () {
+         window.location.href = "evaluation-main.html";
+      }, 3000);
+   </script>
+
+
+</body>
+
+</html>

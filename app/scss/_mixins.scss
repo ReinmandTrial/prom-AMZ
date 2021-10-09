@@ -1,0 +1,52 @@
+// calc(210px + (295 - 210) * ((100vw - 320px) / (1920 - 320)))
+$maxWigthContainer: 1200;
+
+@mixin adaptiv($property, $startSize, $minSize, $type: 1, $maxWigth: 1920, $minWidth: 320) {
+   @if $type==2 {
+      #{$property}: $startSize + px;
+      @media (max-width: $maxWigth + px) and (min-width: $minWidth + px) {
+         #{$property}: calc(
+            #{$minSize + px} + (#{$startSize} - #{$minSize}) * ((100vw - #{$minWidth + px}) /
+                     (#{$maxWigth} - #{$minWidth}))
+         );
+      }
+      @media (max-width: $minWidth + px) {
+         #{$property}: $minSize + px;
+      }
+   } @else {
+      #{$property}: $startSize + px;
+      @media (max-width: $maxWigthContainer + px) {
+         #{$property}: calc(
+            #{$minSize + px} + (#{$startSize} - #{$minSize}) * ((100vw - #{$minWidth + px}) /
+                     (#{$maxWigthContainer} - #{$minWidth}))
+         );
+      }
+   }
+}
+
+%imgCover {
+   & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+%imgContain {
+   & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+   }
+}
+%itemCenter {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+// .div {
+//    @include adaptiv("margin-bottom", 100, 50, 2, 1920, 320);
+//    @extend %imgCover;
+//    @extend %imgContain;
+//    @extend %itemCenter;
+// }

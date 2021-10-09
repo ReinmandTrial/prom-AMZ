@@ -1,0 +1,257 @@
+// MAX-WIDTH 1600PX breakpoints START
+@media (max-width: 1600px) {
+}
+// MAX-WIDTH 1600PX breakpoints END
+
+// MAX-WIDTH 1399.98PX breakpoints START
+@media (max-width: 1399.98px) {
+}
+// MAX-WIDTH 1399.98PX breakpoints END
+
+// MAX-WIDTH 1199.98PX breakpoints START
+@media (max-width: 1199.98px) {
+}
+// MAX-WIDTH 1199.98PX breakpoints END
+
+// MAX-WIDTH 991.98PX breakpoints START
+@media (max-width: 991.98px) {
+   .page-evaluation-third {
+      .container {
+         max-width: 415px;
+      }
+      .evaluation__descr {
+         margin-bottom: 40px;
+      }
+      .evaluation-menu {
+         margin-bottom: unset;
+      }
+   }
+   .card-row .card__image {
+      flex: 0 1 28%;
+   }
+   .evaluation__list-row:not(:last-child) {
+      margin-bottom: 10px;
+   }
+   .page-evaluation-secondary {
+      .container {
+         max-width: 415px;
+      }
+      .evaluation__descr {
+         max-width: 265px;
+         margin-left: auto;
+         margin-right: auto;
+      }
+   }
+   .evaluation-menu {
+      &__container .evaluation-menu {
+         width: calc(100% - 50px);
+         &:not(:last-child) {
+            margin-bottom: 5px;
+         }
+      }
+   }
+   .upload__block {
+      flex-direction: column;
+      align-items: start;
+   }
+   .upload__title {
+      margin-bottom: 20px;
+   }
+   .upload__box,
+   .upload__block .upload {
+      width: 100%;
+   }
+}
+// MAX-WIDTH 991.98PX breakpoints END
+
+// MAX-WIDTH 767.98PX breakpoints START
+@media (max-width: 767.98px) {
+   .rewiew-by-link__content {
+      padding: 150px 0 50px;
+   }
+   .evaluation {
+      &__content {
+         padding: 100px 0 50px;
+      }
+   }
+   .card {
+      &__name {
+         margin-bottom: 55px;
+      }
+      &__image {
+         margin-bottom: 60px;
+      }
+   }
+   .evaluation-menu {
+      margin-bottom: 30px;
+   }
+   .loading {
+      &__content {
+         padding: 160px 0 40px;
+      }
+      &__title {
+         font-size: 64px;
+         margin-bottom: 50px;
+      }
+   }
+   .loading-img {
+      margin-bottom: 40px;
+   }
+   .loading-img,
+   .loading-img__gray,
+   .loading-img__white {
+      @include adaptiv("width", 920, 680, 2, 768, 575);
+   }
+   .form {
+      padding: 150px 0 50px;
+   }
+   .page-main {
+      &__content {
+         padding: 70px 0 40px;
+      }
+   }
+   .banner {
+      background: transparent linear-gradient(310deg, #e6cb83 0%, #d5b150 100%) 0% 0% no-repeat padding-box;
+      .container {
+         max-width: 620px;
+      }
+      &__content {
+         padding: 30px 0 60px;
+      }
+      &__descr {
+         max-width: 506px;
+         margin-left: unset;
+         margin-right: unset;
+         margin-bottom: 108px;
+      }
+      &__btn {
+      }
+   }
+   .banner .logo {
+      margin-bottom: 115px;
+   }
+}
+// MAX-WIDTH 767.98PX breakpoints END
+
+// MAX-WIDTH 576.98PX breakpoints START
+@media (max-width: 575.98px) {
+   .results {
+      &__content {
+         padding: 30px 10px 90px;
+      }
+      .logo {
+         margin-bottom: 97px;
+      }
+      &__title {
+         font-size: 52px;
+         text-transform: unset;
+      }
+      &__descr {
+         margin-bottom: 20px;
+      }
+      &__gift {
+         width: 290px;
+         height: 210px;
+      }
+   }
+   .rewiew-by-link {
+      &__content {
+         padding-top: 50px;
+         padding-bottom: 20px;
+      }
+      &__title {
+         text-align: left;
+         margin-bottom: 10px;
+      }
+      &__steps {
+         margin-bottom: 30px;
+      }
+      &__step {
+         padding: 25px 0;
+      }
+      &__step-text:not(:last-child) {
+         margin-bottom: 20px;
+      }
+   }
+   .evaluation {
+      &__content {
+         padding: 5px 0 20px;
+      }
+   }
+   .card {
+      &__name {
+         margin-bottom: 30px;
+      }
+      &__image {
+         margin-bottom: 45px;
+      }
+   }
+   .evaluation-menu {
+      &__title {
+         margin-bottom: 20px;
+      }
+   }
+   .loading-img,
+   .loading-img__gray,
+   .loading-img__white {
+      @include adaptiv("width", 820, 540, 2, 575, 375);
+   }
+   .loading {
+      .container {
+         padding: 0 20px;
+      }
+      &__content {
+         padding-top: 100px;
+         padding-bottom: 30px;
+      }
+      &__title {
+         font-size: 35px;
+         margin-bottom: 75px;
+      }
+      &__hint {
+         color: rgba(255, 255, 255, 0.7);
+      }
+   }
+   .form {
+      padding: 50px 0 20px;
+      &__title {
+         margin-bottom: 50px;
+      }
+      &__input-box {
+         margin-bottom: 25px;
+      }
+   }
+   .header {
+      &__content {
+         height: 61px;
+      }
+      .container {
+         padding: 0 20px;
+      }
+      .logo {
+         margin-right: 20px;
+      }
+   }
+   .page-main {
+      &__content {
+         padding: 40px 0 20px;
+      }
+      &__section:not(:last-child) {
+         margin-bottom: 40px;
+      }
+      &__title {
+         max-width: unset;
+      }
+   }
+   .banner {
+      background: transparent linear-gradient(324deg, #e6cb83 0%, #d5b150 100%) 0% 0% no-repeat padding-box;
+      &__content {
+         padding: 30px 0;
+      }
+      &__descr {
+         font-size: 24px;
+         padding: 0 10px;
+      }
+   }
+}
+// MAX-WIDTH 576.98PX breakpoints END
