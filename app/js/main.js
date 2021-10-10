@@ -18,7 +18,11 @@ $(document).ready(function () {
    $(function () {
       var count = 0;
       var isDis = false;
-      $('.evaluation__btn').prop('disabled', true);
+      if ($('.evaluation__btn').closest('.page-evaluation-third')) {
+         $('.evaluation__btn').prop('disabled', false);
+      } else {
+         $('.evaluation__btn').prop('disabled', true);
+      }
       $('.js-star-item').mouseover(function () {
          count = 0;
          var i = 0;
@@ -97,7 +101,9 @@ $(document).ready(function () {
                   count_star++;
                }
             })
-
+            if (count_star == 5 && thisParent.hasClass('js-star-block-main')) {
+               window.location.href = "rewiew-by-link.html";
+            }
             if (count_star < 4 && thisParent.hasClass('js-star-block-main')) {
                isDis = true;
                $('.upload__block').addClass('open');
@@ -130,10 +136,15 @@ $(document).ready(function () {
             }
 
             if (count_star > 3 && thisParent.hasClass('js-star-block-secondary')) {
-               $('.evaluation__btn').prop('disabled', false);
-               $('.evaluation__btn').toggleClass('open');
+               window.location.href = "almost-done.html";
+               // $('.evaluation__btn').prop('disabled', false);
+               // $('.evaluation__btn-done').addClass('open');
+               // $('.evaluation__btn-review').removeClass('open');
             } else if (count_star < 4 && thisParent.hasClass('js-star-block-secondary')) {
-               $('.evaluation__btn').prop('disabled', false);
+               window.location.href = "review.html";
+               // $('.evaluation__btn').prop('disabled', false);
+               // $('.evaluation__btn-review').addClass('open');
+               // $('.evaluation__btn-done').removeClass('open');
             }
          }
       })
@@ -143,7 +154,7 @@ $(document).ready(function () {
          });
          $('.js-btn-upload').prop('disabled', true);
          $('.evaluation__btn').prop('disabled', true);
-         // file.val('');ПОЧИСТИТЬ ИНПУТ ОТ ФАЙЛА
+         // file.val(''); //ПОЧИСТИТЬ ИНПУТ ОТ ФАЙЛА
          $('.js-btn-upload').html(' <span class="upload__icon"> <img src="images/photo.png" alt=""></span> Upload it here');
 
       })

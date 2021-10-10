@@ -196,8 +196,11 @@
 .loading-img {
    // width: calc(100% - 10px);
    // margin: 0 5px;
+   -webkit-align-self: end;
+   -webkit-align-self: flex-end;
    margin-bottom: 50px;
    align-self: end;
+   align-self: flex-end;
    margin-right: 5px;
    margin-left: -400px;
    @extend %imgContain;
