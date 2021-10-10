@@ -52,7 +52,7 @@ $(document).ready(function () {
             }
          })
 
-         
+
 
       })
       $('.js-star-item').mouseout(function () {
@@ -76,23 +76,23 @@ $(document).ready(function () {
          var i = 0;
          var thisParent = $(this).closest('.js-star-block');
          var thisItem = thisParent.find('.js-star-item');
-
+         $(this).addClass('active');
+         $(thisItem).each(function (index) {
+            if ($(this).hasClass('active')) {
+               i = index;
+            }
+         })
+         $(thisItem).each(function () {
+            $(this).removeClass('active');
+         })
+         $(thisItem).each(function (index) {
+            if (index < i + 1) {
+               $(this).addClass('active');
+               count_star++;
+            }
+         })
          if (thisParent.hasClass('js-star-block-main')) {
-            $(this).addClass('active');
-            $(thisItem).each(function (index) {
-               if ($(this).hasClass('active')) {
-                  i = index;
-               }
-            })
-            $(thisItem).each(function () {
-               $(this).removeClass('active');
-            })
-            $(thisItem).each(function (index) {
-               if (index < i + 1) {
-                  $(this).addClass('active');
-                  count_star++;
-               }
-            })
+
             if (count_star == 5 && thisParent.hasClass('js-star-block-main')) {
                window.location.href = "rewiew-by-link.html";
             }
@@ -130,17 +130,18 @@ $(document).ready(function () {
                $('.js-btn-upload').prop('disabled', false);
             }
 
-            if (count_star > 3 && thisParent.hasClass('js-star-block-secondary')) {
-               window.location.href = "almost-done.html";
-               // $('.evaluation__btn').prop('disabled', false);
-               // $('.evaluation__btn-done').addClass('open');
-               // $('.evaluation__btn-review').removeClass('open');
-            } else if (count_star < 4 && thisParent.hasClass('js-star-block-secondary')) {
-               window.location.href = "review.html";
-               // $('.evaluation__btn').prop('disabled', false);
-               // $('.evaluation__btn-review').addClass('open');
-               // $('.evaluation__btn-done').removeClass('open');
-            }
+
+         }
+         if (count_star > 3 && thisParent.hasClass('js-star-block-secondary')) {
+            window.location.href = "almost-done.html";
+            // $('.evaluation__btn').prop('disabled', false);
+            // $('.evaluation__btn-done').addClass('open');
+            // $('.evaluation__btn-review').removeClass('open');
+         } else if (count_star < 4 && thisParent.hasClass('js-star-block-secondary')) {
+            window.location.href = "review.html";
+            // $('.evaluation__btn').prop('disabled', false);
+            // $('.evaluation__btn-review').addClass('open');
+            // $('.evaluation__btn-done').removeClass('open');
          }
       })
       $('.js-star-del').on('click', function () {
