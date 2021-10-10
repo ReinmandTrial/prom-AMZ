@@ -17,7 +17,6 @@ $(document).ready(function () {
 
    $(function () {
       var count = 0;
-      var isDis = false;
       if ($('.evaluation__btn').closest('.page-evaluation-third')) {
          $('.evaluation__btn').prop('disabled', false);
       } else {
@@ -30,51 +29,46 @@ $(document).ready(function () {
          var thisParent = $(this).closest('.js-star-block');
          var thisItem = thisParent.find('.js-star-item');
 
-         if (isDis == true && thisParent.hasClass('js-star-block-main')) {
-            return 0;
-         } else {
-            $(thisItem).each(function () {
-               if ($(this).hasClass('active')) {
-                  count++;
-               }
-            })
-            $(thisItem).each(function () {
-               $(this).removeClass('active');
-            })
-            $(this).addClass('js-prov');
-            $(thisItem).each(function () {
-               $(this).removeClass('js-hover');
-            })
-            $(thisItem).each(function (index) {
-               if ($(this).hasClass('js-prov')) {
-                  i = index;
-               }
-            })
-            $(thisItem).each(function (index) {
-               if (index < i + 1) {
-                  $(this).addClass('js-hover');
-               }
-            })
+         $(thisItem).each(function () {
+            if ($(this).hasClass('active')) {
+               count++;
+            }
+         })
+         $(thisItem).each(function () {
+            $(this).removeClass('active');
+         })
+         $(this).addClass('js-prov');
+         $(thisItem).each(function () {
+            $(this).removeClass('js-hover');
+         })
+         $(thisItem).each(function (index) {
+            if ($(this).hasClass('js-prov')) {
+               i = index;
+            }
+         })
+         $(thisItem).each(function (index) {
+            if (index < i + 1) {
+               $(this).addClass('js-hover');
+            }
+         })
 
-         }
+         
 
       })
       $('.js-star-item').mouseout(function () {
          var thisParent = $(this).closest('.js-star-block');
          var thisItem = thisParent.find('.js-star-item');
-         if (isDis == true && thisParent.hasClass('js-star-block-main')) {
-            return 0;
-         } else {
-            $(this).removeClass('js-prov');
-            $(thisItem).each(function () {
-               $(this).removeClass('js-hover');
-            })
-            $(thisItem).each(function (index) {
-               if (index < count) {
-                  $(this).addClass('active');
-               }
-            })
-         }
+
+         $(this).removeClass('js-prov');
+         $(thisItem).each(function () {
+            $(this).removeClass('js-hover');
+         })
+         $(thisItem).each(function (index) {
+            if (index < count) {
+               $(this).addClass('active');
+            }
+         })
+
       })
       $('.js-star-item').on('click', function () {
          var count_star = 0;
@@ -83,9 +77,7 @@ $(document).ready(function () {
          var thisParent = $(this).closest('.js-star-block');
          var thisItem = thisParent.find('.js-star-item');
 
-         if (isDis == true && thisParent.hasClass('js-star-block-main')) {
-            return 0;
-         } else {
+         if (thisParent.hasClass('js-star-block-main')) {
             $(this).addClass('active');
             $(thisItem).each(function (index) {
                if ($(this).hasClass('active')) {
@@ -105,14 +97,17 @@ $(document).ready(function () {
                window.location.href = "rewiew-by-link.html";
             }
             if (count_star < 4 && thisParent.hasClass('js-star-block-main')) {
-               isDis = true;
                $('.upload__block').addClass('open');
                $('.evaluation-menu__body').addClass('open');
                $('.evaluation__btn').prop('disabled', true);
                $('.page-evaluation-main').addClass('page-evaluation-secondary');
                $('.evaluation__btn').toggleClass('open');
             } else if (thisParent.hasClass('js-star-block-main')) {
+               $('.upload__block').removeClass('open');
+               $('.evaluation-menu__body').removeClass('open');
                $('.evaluation__btn').prop('disabled', false);
+               $('.page-evaluation-main').removeClass('page-evaluation-secondary');
+               $('.evaluation__btn').toggleClass('open');
                //откроется кнопка
             }
             var btnGroup = $(this).closest('.js-star-group');
