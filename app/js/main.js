@@ -110,28 +110,30 @@ $(document).ready(function () {
                $('.evaluation__btn').toggleClass('open');
                //откроется кнопка
             }
-            var btnGroup = $(this).closest('.js-star-group');
-            var isAllBtn = false;
-            $(btnGroup.find('.js-star-block')).each(function () {
-               var isHave = false;
-               $($(this).find('.js-star-item')).each(function () {
-                  if ($(this).hasClass('active')) {
-                     isHave = true;
-                  }
-               });
-               console.log(isHave);
-               if (isHave == false) {
-                  isAllBtn = false;
-                  return false;
-               }
-               isAllBtn = true;
-            })
-            if (isAllBtn == true) {
-               $('.js-btn-upload').prop('disabled', false);
-            }
-
-
          }
+         var btnGroup = $(this).closest('.js-star-group');
+         var isAllBtn = false;
+         // console.log(btnGroup.find('.js-star-block'));
+         // console.log(document.querySelectorAll('.js-star-block'));
+         $(btnGroup.find('.js-star-block')).each(function () {
+            var isHave = false;
+
+            $($(this).find('.js-star-item')).each(function () {
+               if ($(this).hasClass('active')) {
+                  isHave = true;
+               }
+            });
+            if (isHave == false) {
+               isAllBtn = false;
+               return false;
+            }
+            isAllBtn = true;
+         })
+         if (isAllBtn == true) {
+            $('.js-btn-upload').prop('disabled', false);
+         }
+
+
          if (count_star > 3 && thisParent.hasClass('js-star-block-secondary')) {
             window.location.href = "almost-done.html";
             // $('.evaluation__btn').prop('disabled', false);
